@@ -1,0 +1,37 @@
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    // Настройка для русского языка
+    setlocale(LC_ALL, "Russian");
+    
+    int number;
+    int count = 0;    // Счетчик чисел
+    int sum = 0;      // Сумма чисел
+    
+    cout << "[+] Введите число: ";
+    cin >> number;
+    
+    // Продолжаем, пока не введен 0
+    while (number != 0) {
+        // Проверяем, что число положительное
+        if (number > 0) {
+            count = count + 1;  // Увеличиваем счетчик
+            sum = sum + number; // Добавляем к сумме
+        } else {
+            cout << "[!] Число должно быть положительным!\n";
+        }
+        
+        // Запрашиваем следующее число
+        cout << "[+] Введите число: ";
+        cin >> number;
+    }
+    
+    // Выводим результаты
+    cout << "\n[+] Количество чисел: " << count << endl;
+    cout << "[+] Сумма: " << sum << endl;
+    
+    return 0;
+}
